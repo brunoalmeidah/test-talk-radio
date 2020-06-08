@@ -8,7 +8,7 @@ class GameController {
         localStoragePath: './src/tmp/store',
       });
 
-      const game = findGameByIdService.execute(id);
+      const game = await findGameByIdService.execute(id);
 
       return res.json(game);
     } catch (error) {

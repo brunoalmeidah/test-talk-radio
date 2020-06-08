@@ -5,7 +5,7 @@ class FindGameByIdService {
     this.localStoragePath = localStoragePath;
   }
 
-  execute(id) {
+  async execute(id) {
     const localstorage = new LocalStorage(this.localStoragePath);
     const game = localstorage.getItem(id);
     if (!game) {
