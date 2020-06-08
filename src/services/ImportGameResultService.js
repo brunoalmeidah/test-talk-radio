@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import hash from 'object-hash';
 import logParser from '../utils/LogParser';
 
 class ImportGameResultService {
@@ -10,13 +11,17 @@ class ImportGameResultService {
 
     const parseLog = readLogStream.pipe(logParser);
 
+    const games = {};
     parseLog.on('data', (data) => {
-      console.log(data);
+      const id = hash(data);
+      games[id] = data;
     });
 
     await new Promise((resolve) => {
       readLogStream.on('end', resolve);
     });
+
+    return games;
   }
 }
 
