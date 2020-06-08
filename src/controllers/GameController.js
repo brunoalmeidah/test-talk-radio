@@ -4,7 +4,9 @@ class GameController {
   async show(req, res) {
     const { id } = req.params;
     try {
-      const findGameByIdService = new FindGameByIdService();
+      const findGameByIdService = new FindGameByIdService({
+        localStoragePath: './src/tmp/store',
+      });
 
       const game = findGameByIdService.execute(id);
 

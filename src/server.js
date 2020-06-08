@@ -3,7 +3,9 @@ import GameResultReportService from './services/GameResultReportService';
 import ImportGameResultService from './services/ImportGameResultService';
 import routes from './routes';
 
-const importGameResultService = new ImportGameResultService();
+const importGameResultService = new ImportGameResultService({
+  localStoragePath: './src/tmp/store',
+});
 const gameResultReportService = new GameResultReportService();
 
 const app = express();
