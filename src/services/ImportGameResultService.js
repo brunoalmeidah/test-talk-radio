@@ -5,8 +5,8 @@ import { LocalStorage } from 'node-localstorage';
 import logParser from '../utils/LogParser';
 
 class ImportGameResultService {
-  async execute() {
-    const filePath = path.resolve(__dirname, '..', 'tmp', 'games.log');
+  async execute(fileName) {
+    const filePath = path.resolve(__dirname, '..', 'tmp', fileName);
 
     const localstorage = new LocalStorage('./src/tmp/store');
     localstorage.clear();
