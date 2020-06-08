@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "node-localstorage": "^2.1.6",
     "object-hash": "^2.0.3"
   }
 }
