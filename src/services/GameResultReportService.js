@@ -1,15 +1,9 @@
-import ImportGameResultService from './ImportGameResultService';
-
 class GameResultReportService {
-  async execute() {
-    const importGameResultService = new ImportGameResultService();
-    const games = await importGameResultService.execute();
+  async execute(games) {
     const ranking = [];
 
-    console.log(' ');
-
     Object.keys(games).forEach((key) => {
-      console.log(`Game ID: ${key}`);
+      console.log(`\nGame ID: ${key}`);
 
       const { kills } = games[key];
 
@@ -34,9 +28,8 @@ class GameResultReportService {
       }
       return 0;
     });
-    console.log(' ');
-    console.log('Ranking Geral:');
-    console.log(' ');
+    console.log('\nRanking Geral:\n');
+
     rankingSorted.forEach((item) => {
       console.log(`${item.player} -> ${item.kill}`);
     });
