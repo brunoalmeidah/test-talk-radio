@@ -30,7 +30,7 @@ yarn dev
 
 ### Tarefa 1
 
-Dentro da pasta src/utils/ foi criado o LogParser.js, uma classe que herda a classe Transform da biblioteca stream do node, o objetivo desse LogParser é ser usado como um Pipe em um ReadStream para analisar o arquivo de log e retornar os resultados de cadad jogo. O Parser é utilizado na leitura do arquivo dentro do ImportGameResultService dentro da pasta src/services/.
+Dentro da pasta src/utils/ foi criado o LogParser.js, uma classe que herda a classe Transform da biblioteca stream do node, o objetivo desse LogParser é ser usado como um Pipe em um ReadStream para analisar o arquivo de log e retornar os resultados de cada jogo. O Parser é utilizado na leitura do arquivo dentro do ImportGameResultService dentro da pasta src/services/.
 
 ### Tarefa 2
 
@@ -44,4 +44,4 @@ Dentro da pasta src/ temos o arquivo routes.js com a seguinte rota :
 /games/:id
 ```
 
-você pode acessar essa rota de qualquer client, enviando o ID a api retornará o resultado do Jogo, o ID do jogo é mostrado em log no terminal quando o servidor inicializa.
+você pode acessar essa rota de qualquer client, enviando o ID, a api retornará o resultado do Jogo. O ID do jogo é mostrado em log no terminal quando o servidor inicializa.
