@@ -5,12 +5,13 @@ import { LocalStorage } from 'node-localstorage';
 import logParser from '../utils/LogParser';
 
 class ImportGameResultService {
-  constructor({ localStoragePath }) {
+  constructor({ localStoragePath, fileName }) {
     this.localStoragePath = localStoragePath;
+    this.fileName = fileName;
   }
 
-  async execute(fileName) {
-    const filePath = path.resolve(__dirname, '..', 'tmp', fileName);
+  async execute() {
+    const filePath = path.resolve(__dirname, '..', 'tmp', this.fileName);
 
     const localstorage = new LocalStorage(this.localStoragePath);
     localstorage.clear();
